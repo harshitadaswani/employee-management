@@ -1,0 +1,30 @@
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.textLeft {
+  text-align: left;
+}
+
+.marginBottom {
+  margin-bottom: 0.5rem;
+}
+
+.redText {
+  color: red;
+}
+
+.buttonCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  margin-top: 1rem;
+  background-color: aliceblue;
+  color: #1a1a1a;
+}

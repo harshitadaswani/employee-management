@@ -1,35 +1,28 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
+import { EmployeeForm, EmployeeList, Modal } from "./components";
+import { useEmployee } from "./context/EmployeeContext";
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const { employeeData, setEmployeeData } = useEmployee();
+  const [show, setShow] = useState(false);
+  const handleFormSubmit = (values) => {
+    console.log("submittedValues: ", values);
+    setEmployeeData([...employeeData, values]);
+    setShow(false);
+  };
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="flex">
+        <h1>Employee List</h1>
+        <button onClick={() => setShow(true)}>Add Employee</button>
+        <Modal title="Employee Form" show={show} onClose={()=>setShow(false)}>
+          <EmployeeForm onSubmit={handleFormSubmit} buttonText="Add Employee" />
+        </Modal>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <EmployeeList />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
