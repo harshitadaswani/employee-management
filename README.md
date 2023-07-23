@@ -8,7 +8,7 @@ We need to build a system to help manage employees, so we need screens that allo
 ✔ A manager to add / update / delete employees. \
 ✔ See a list of employees.
 
-#       Field Name \
+#       Field Name
 1       First name \
 2       Last Name \
 3       Phone \
@@ -17,7 +17,7 @@ We need to build a system to help manage employees, so we need screens that allo
 6       salary type \
 7       salary \
 8       Department \
-9       Login user id \
+9       Login user id
 
 ✔ Each employee can be in only one department. \
 ✔ The data type in the feed must be verified and an appropriate error displayed if the feed is incorrect. \
